@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="0.45" stop-color="#efe1bb"/>
+      <stop offset="1" stop-color="#83936f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="34%" r="58%">
+      <stop offset="0" stop-color="#fffdf5" stop-opacity="0.85"/>
+      <stop offset="0.42" stop-color="#d5b46c" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#47523f" stop-opacity="0.14"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="2200" fill="url(#bg)"/>
+  <rect width="1600" height="2200" fill="url(#glow)"/>
+  <g opacity="0.28" fill="none" stroke="#ad8740" stroke-width="2">
+    <path d="M183 346C390 248 553 287 682 464c155 213 371 204 579 29 73-61 129-90 208-93"/>
+    <path d="M158 1840c201-113 397-93 560 58 172 160 367 146 589-43 80-68 145-94 224-82"/>
+    <circle cx="800" cy="1098" r="492"/>
+    <circle cx="800" cy="1098" r="407"/>
+  </g>
+  <g opacity="0.62">
+    <ellipse cx="806" cy="1162" rx="305" ry="420" fill="#fffaf0" opacity="0.34"/>
+    <path d="M720 1438c-104-87-173-250-151-426 26-208 150-323 230-390 82 72 204 183 229 391 21 176-46 339-151 425-50 41-106 42-157 0z" fill="#f7efd9" opacity="0.58"/>
+    <path d="M799 631c-55 116-98 294-98 530 0 171 28 280 98 352 72-73 99-184 99-352 0-236-44-414-99-530z" fill="#8c9b78" opacity="0.32"/>
+  </g>
+  <g fill="#fffaf0" opacity="0.72">
+    <circle cx="262" cy="642" r="8"/>
+    <circle cx="1288" cy="747" r="7"/>
+    <circle cx="338" cy="1546" r="6"/>
+    <circle cx="1212" cy="1600" r="9"/>
+  </g>
+</svg>

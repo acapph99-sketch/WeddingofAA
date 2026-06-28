@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="1" stop-color="#d5b46c"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#b)"/>
+  <path d="M312 710c18-176 74-368 138-368s120 192 138 368H312z" fill="#fffaf0"/>
+  <circle cx="450" cy="330" r="122" fill="#f7efd9"/>
+  <path d="M286 724c41-142 99-222 164-222s123 80 164 222H286z" fill="#8c9b78"/>
+  <circle cx="450" cy="450" r="350" fill="none" stroke="#ad8740" stroke-width="8" opacity="0.55"/>
+  <text x="450" y="820" text-anchor="middle" font-family="Georgia, serif" font-size="56" fill="#47523f">Bride</text>
+</svg>
