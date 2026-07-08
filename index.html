@@ -1,98 +1,74 @@
-<!doctype html>
-<html lang="en">
+﻿<!doctype html>
+<html lang="ms">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Wedding invitation of Mohamad Asyraf and Anis Zulaikha."
-    />
+    <meta name="description" content="Majlis Walimatulurus Anis Zulaikha dan Mohamad Asyraf." />
+    <meta name="theme-color" content="#edf6fb" />
     <title>Asyraf & Anis Wedding Invitation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="locked">
     <div class="opening-screen" id="openingScreen" aria-live="polite">
-      <div class="opening-bg"></div>
-      <div class="envelope-wrap">
-        <div class="envelope" aria-hidden="true">
-          <div class="envelope-back"></div>
-          <div class="letter">
-            <span>A&A</span>
+      <div class="opening-art" aria-hidden="true"></div>
+      <div class="opening-panel">
+        <div class="envelope-wrap">
+          <div class="envelope" aria-hidden="true">
+            <div class="envelope-back"></div>
+            <div class="letter"><span data-text="monogram">A&A</span></div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
           </div>
-          <div class="envelope-front"></div>
-          <div class="envelope-flap"></div>
         </div>
+        <p class="eyebrow">Walimatulurus</p>
+        <h1 data-text="coupleName">Asyraf & Anis</h1>
+        <button class="btn btn-primary" id="openInvitation" type="button">Open Invitation</button>
       </div>
-      <p class="opening-kicker">Walimatulurus Invitation</p>
-      <h1>Asyraf & Anis</h1>
-      <button class="primary-btn" id="openInvitation" type="button">
-        Open Invitation
-      </button>
     </div>
 
     <audio id="weddingMusic" preload="none" loop></audio>
-
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="floating-petals" id="floatingPetals" aria-hidden="true"></div>
 
-    <main id="mainContent">
-      <section class="hero section" id="home">
-        <img class="hero-image" id="heroImage" alt="Wedding hero" fetchpriority="high" />
-        <div class="hero-overlay"></div>
-        <div class="hero-content fade-in">
+    <main>
+      <section class="hero section" id="home" aria-labelledby="heroTitle">
+        <img class="hero-image" id="heroImage" alt="Garden wedding illustration" fetchpriority="high" />
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-content reveal">
           <p class="eyebrow">The Wedding Of</p>
-          <div class="hero-monogram" data-config="monogram">A&A</div>
-          <h2>
-            <span data-config="groomName">Mohamad Asyraf</span>
-            <small>&amp;</small>
-            <span data-config="brideName">Anis Zulaikha</span>
-          </h2>
-          <p class="hero-date" data-config="weddingDateDisplay">2 September 2026</p>
+          <div class="monogram" data-text="monogram">A&A</div>
+          <h2 id="heroTitle"><span data-text="groomName">Mohamad Asyraf</span><small>&amp;</small><span data-text="brideName">Anis Zulaikha</span></h2>
+          <p class="hero-date"><span data-text="eventDay">Rabu</span> <span data-text="eventDate">2 September 2026</span></p>
         </div>
-        <a class="scroll-cue" href="#guest" aria-label="Scroll to invitation">
-          <span></span>
-        </a>
+        <a class="scroll-cue" href="#guest" aria-label="Scroll to invitation"><span></span></a>
       </section>
 
-      <section class="guest-section section soft-band" id="guest" hidden>
-        <div class="section-inner narrow fade-in">
-          <p class="eyebrow">Dear</p>
+      <section class="guest-section section" id="guest" hidden aria-labelledby="guestName">
+        <div class="section-inner narrow reveal">
+          <p class="eyebrow" data-text="guestLabel">Jemputan Khas Buat</p>
           <h2 id="guestName">Guest</h2>
         </div>
       </section>
 
-      <section class="invitation section" id="invitation">
-        <div class="section-inner narrow fade-in">
-          <p class="bismillah">Bismillahirrahmanirrahim</p>
-          <p class="invitation-copy">
-            Dengan penuh kesyukuran ke hadrat Allah SWT, kami dengan segala
-            hormatnya menjemput Dato'/Datin/Tuan/Puan/Encik/Cik seisi keluarga
-            untuk hadir ke majlis Walimatulurus puteri kami.
-          </p>
+      <section class="invitation section ivory-band" id="invitation" aria-labelledby="invitationTitle">
+        <div class="section-inner narrow reveal">
+          <p class="bismillah" data-text="bismillah">Bismillahirrahmanirrahim</p>
+          <p class="parents-intro" data-text="parentsIntro">Dengan penuh kesyukuran,</p>
+          <h2 id="invitationTitle" class="parents-names"><span data-text="fatherName">Rosli bin Ibrahim (Bang Lin)</span><small>dan</small><span data-text="motherName">Ramlah binti Bakar (Kak Shah)</span></h2>
+          <p class="invitation-copy" data-text="parentsInvitation"></p>
           <div class="ornament" aria-hidden="true"></div>
-          <h2>
-            <span data-config="groomName">Mohamad Asyraf</span>
-            <small>&amp;</small>
-            <span data-config="brideName">Anis Zulaikha</span>
-          </h2>
-          <p class="invitation-copy">
-            Semoga kehadiran dan doa restu tuan/puan akan menyerikan lagi majlis
-            serta diberkati Allah SWT.
-          </p>
+          <p class="invitation-copy" data-text="invitationNote"></p>
         </div>
       </section>
 
-      <section class="countdown section sage-band" id="countdown">
-        <div class="section-inner fade-in">
+      <section class="countdown section blue-band" id="countdown" aria-labelledby="countdownTitle">
+        <div class="section-inner reveal">
           <p class="eyebrow">Counting The Days</p>
-          <h2 data-config="weddingDateDisplay">2 September 2026</h2>
+          <h2 id="countdownTitle"><span data-text="eventDay">Rabu</span><small data-text="eventDate">2 September 2026</small></h2>
           <div class="countdown-grid" aria-label="Wedding countdown">
             <div><strong id="days">0</strong><span>Days</span></div>
             <div><strong id="hours">0</strong><span>Hours</span></div>
@@ -102,110 +78,100 @@
         </div>
       </section>
 
-      <section class="couple section" id="couple">
-        <div class="section-inner fade-in">
+      <section class="couple section" id="couple" aria-labelledby="coupleTitle">
+        <div class="section-inner reveal">
           <p class="eyebrow">Bride &amp; Groom</p>
-          <h2>Meet The Couple</h2>
+          <h2 id="coupleTitle">Anis &amp; Asyraf</h2>
           <div class="couple-grid">
-            <article class="person">
-              <img id="groomImage" alt="Mohamad Asyraf" loading="lazy" />
-              <h3 data-config="groomName">Mohamad Asyraf</h3>
-            </article>
-            <article class="person">
-              <img id="brideImage" alt="Anis Zulaikha" loading="lazy" />
-              <h3 data-config="brideName">Anis Zulaikha</h3>
-            </article>
+            <article class="person-card"><img id="brideImage" alt="Anis Zulaikha" loading="lazy" /><h3 data-text="brideName">Anis Zulaikha</h3><p>Bride</p></article>
+            <article class="person-card"><img id="groomImage" alt="Mohamad Asyraf" loading="lazy" /><h3 data-text="groomName">Mohamad Asyraf</h3><p>Groom</p></article>
           </div>
         </div>
       </section>
 
-      <section class="details section soft-band" id="details">
-        <div class="section-inner fade-in">
-          <p class="eyebrow">Wedding Details</p>
-          <h2>Walimatulurus</h2>
+      <section class="details section ivory-band" id="details" aria-labelledby="detailsTitle">
+        <div class="section-inner reveal">
+          <p class="eyebrow">Wedding Information</p>
+          <h2 id="detailsTitle">Walimatulurus</h2>
           <div class="details-grid">
-            <article>
-              <span>Invitation Time</span>
-              <strong data-config="invitationTime">12:00 PM</strong>
-            </article>
-            <article>
-              <span>Bride &amp; Groom Arrival</span>
-              <strong data-config="arrivalTime">12:30 PM</strong>
-            </article>
-            <article>
-              <span>Venue</span>
-              <strong data-config="venueName">Dewan Walan (MyHomeVillage)</strong>
-              <p data-config="venueAddress">Arau, Perlis</p>
-            </article>
-            <article>
-              <span>Parents</span>
-              <strong>
-                <span data-config="groomParent">Rosli bin Ibrahim (Bang Lin)</span>
-                <small>&amp;</small>
-                <span data-config="brideParent">Ramlah binti Bakar (Kak Shah)</span>
-              </strong>
-            </article>
+            <article><span>Hari</span><strong data-text="eventDay">Rabu</strong></article>
+            <article><span>Tarikh</span><strong data-text="eventDate">2 September 2026</strong></article>
+            <article><span>Masa</span><strong data-text="invitationTime">12:00 Tengah Hari</strong></article>
+            <article><span data-text="arrivalLabel">Ketibaan Pengantin</span><strong data-text="arrivalTime">12:30 Tengah Hari</strong></article>
+            <article class="wide"><span>Venue</span><strong data-text="venueName">Dewan Walan (MyHomeVillage)</strong><p data-text="venueAddress">Arau, Perlis</p></article>
           </div>
-          <a class="primary-btn outline" id="mapsLink" target="_blank" rel="noreferrer">
-            Open Google Maps
-          </a>
         </div>
       </section>
 
-      <section class="timeline section" id="timeline">
-        <div class="section-inner narrow fade-in">
-          <p class="eyebrow">Majlis Timeline</p>
-          <h2>Event Flow</h2>
-          <ol class="timeline-list">
-            <li><time>12:00 PM</time><span>Guest Arrival</span></li>
-            <li><time>12:30 PM</time><span>Bride &amp; Groom Arrival</span></li>
-          </ol>
+      <section class="timeline section" id="timeline" aria-labelledby="timelineTitle">
+        <div class="section-inner narrow reveal">
+          <p class="eyebrow">Wedding Timeline</p>
+          <h2 id="timelineTitle">Event Flow</h2>
+          <ol class="timeline-list" id="timelineList"></ol>
         </div>
       </section>
 
-      <section class="gallery section sage-band" id="gallery">
-        <div class="section-inner fade-in">
-          <p class="eyebrow">Gallery</p>
-          <h2>Our Moments</h2>
-          <div class="gallery-grid" id="galleryGrid"></div>
+      <section class="map section blue-band" id="map" aria-labelledby="mapTitle">
+        <div class="section-inner reveal">
+          <p class="eyebrow">Location</p>
+          <h2 id="mapTitle" data-text="venueName">Dewan Walan (MyHomeVillage)</h2>
+          <div class="map-frame"><iframe id="mapEmbed" title="Google Maps location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <a class="btn btn-light" id="mapsLink" target="_blank" rel="noreferrer">Open in Google Maps</a>
         </div>
       </section>
 
-      <section class="rsvp section" id="rsvp">
-        <div class="section-inner narrow fade-in">
+      <section class="contact section" id="contact" aria-labelledby="contactTitle">
+        <div class="section-inner reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contactTitle">Hubungi Keluarga</h2>
+          <div class="contact-grid" id="contactGrid"></div>
+        </div>
+      </section>
+
+      <section class="rsvp section ivory-band" id="rsvp" aria-labelledby="rsvpTitle">
+        <div class="section-inner reveal">
           <p class="eyebrow">RSVP</p>
-          <h2>Confirm Attendance</h2>
-          <p>
-            Kindly confirm your attendance through WhatsApp. Your presence and
-            prayers mean so much to us.
-          </p>
-          <a class="primary-btn" id="rsvpLink" target="_blank" rel="noreferrer">
-            RSVP via WhatsApp
-          </a>
+          <h2 id="rsvpTitle">Confirm Attendance</h2>
+          <div class="rsvp-layout">
+            <form class="rsvp-form" id="rsvpForm">
+              <label>Name<input id="guestInput" name="name" autocomplete="name" required /></label>
+              <fieldset><legend>Attendance</legend><label class="choice"><input type="radio" name="attendance" value="attending" required /> Attending</label><label class="choice"><input type="radio" name="attendance" value="not_attending" /> Not Attending</label></fieldset>
+              <label>Number of Guests<input id="guestCount" name="guestCount" type="number" min="0" max="10" value="1" required /></label>
+              <label>Message / Wishes<textarea id="messageInput" name="message" rows="4" maxlength="280"></textarea></label>
+              <button class="btn btn-primary" id="submitRsvp" type="submit"><span class="btn-text">Submit</span><span class="loader" aria-hidden="true"></span></button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+            <aside class="stats-card" aria-label="RSVP dashboard">
+              <h3>Live RSVP</h3>
+              <div class="stats-grid"><div><strong id="totalResponses">0</strong><span>Responses</span></div><div><strong id="guestsAttending">0</strong><span>Guests Attending</span></div><div><strong id="guestsNotAttending">0</strong><span>Guests Not Attending</span></div></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="wishes section" id="wishes" aria-labelledby="wishesTitle">
+        <div class="section-inner reveal">
+          <p class="eyebrow">Guest Wishes</p>
+          <h2 id="wishesTitle">Doa &amp; Ucapan</h2>
+          <div class="wishes-grid" id="wishesGrid"></div>
+          <button class="btn btn-secondary" id="loadMoreWishes" type="button" hidden>Load More</button>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="section-inner narrow fade-in">
+      <div class="section-inner narrow reveal">
         <p class="bismillah">Terima Kasih</p>
         <h2>With Love &amp; Gratitude</h2>
-        <p>
-          Thank you for your kind prayers, blessings and presence as we begin
-          this beautiful journey together.
-        </p>
-        <strong data-config="coupleShortName">Asyraf & Anis</strong>
+        <p>Terima kasih atas doa, kehadiran dan restu yang menyerikan majlis kami.</p>
+        <strong data-text="coupleName">Asyraf & Anis</strong>
       </div>
     </footer>
 
-    <button class="music-toggle" id="musicToggle" type="button" aria-label="Toggle music">
-      <span id="musicIcon">Music Off</span>
-    </button>
-    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
-      Up
-    </button>
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="Toggle music">Music Off</button>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">Up</button>
 
     <script src="config.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

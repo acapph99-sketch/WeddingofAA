@@ -1,34 +1,79 @@
-const WEDDING_CONFIG = {
-  brideName: "Anis Zulaikha",
-  groomName: "Mohamad Asyraf",
-  coupleShortName: "Asyraf & Anis",
-  monogram: "A&A",
-  weddingDate: "2026-09-02T12:00:00+08:00",
-  weddingDateDisplay: "2 September 2026",
-  invitationTime: "12:00 PM",
-  arrivalTime: "12:30 PM",
-  venueName: "Dewan Walan (MyHomeVillage)",
-  venueAddress: "Arau, Perlis",
-  parents: {
-    groom: "Rosli",
-    bride: "Mak Anis"
+﻿const WEDDING_CONFIG = {
+  meta: {
+    siteTitle: "Asyraf & Anis Wedding Invitation",
+    description: "Majlis Walimatulurus Anis Zulaikha dan Mohamad Asyraf."
   },
-  whatsappNumber: "60142402822",
-  whatsappMessage:
-    "Assalamualaikum.\n\nI would like to confirm my attendance to the wedding of Mohamad Asyraf & Anis Zulaikha.",
-  googleMapsUrl: "https://maps.app.goo.gl/btB6J5w7BqSCi3oe6",
-  musicPath: "assets/music/wedding-music.wav",
+  couple: {
+    bride: "Anis Zulaikha",
+    groom: "Mohamad Asyraf",
+    displayName: "Asyraf & Anis",
+    monogram: "A&A"
+  },
+  event: {
+    day: "Rabu",
+    dateDisplay: "2 September 2026",
+    dateTime: "2026-09-02T12:00:00+08:00",
+    invitationTime: "12:00 Tengah Hari",
+    arrivalLabel: "Ketibaan Pengantin",
+    arrivalTime: "12:30 Tengah Hari",
+    venueName: "Dewan Walan (MyHomeVillage)",
+    venueAddress: "Arau, Perlis"
+  },
+  parents: {
+    intro: "Dengan penuh kesyukuran,",
+    father: "Rosli bin Ibrahim (Bang Lin)",
+    connector: "dan",
+    mother: "Ramlah binti Bakar (Kak Shah)",
+    invitation:
+      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik ke Majlis Walimatulurus puteri mereka."
+  },
+  invitation: {
+    guestLabel: "Jemputan Khas Buat",
+    bismillah: "Bismillahirrahmanirrahim",
+    note:
+      "Semoga dengan kehadiran dan doa restu para tetamu, majlis ini diberkati Allah SWT dan menjadi kenangan indah buat keluarga kami."
+  },
+  contacts: [
+    {
+      name: "Rosli (Bang Lin)",
+      relationship: "Family Representative",
+      phone: "60142402822"
+    },
+    {
+      name: "Anis",
+      relationship: "Bride",
+      phone: "60142402822"
+    }
+  ],
+  maps: {
+    embedUrl:
+      "https://www.google.com/maps?q=Dewan%20Walan%20MyHomeVillage%20Arau%20Perlis&output=embed",
+    openUrl: "https://maps.app.goo.gl/btB6J5w7BqSCi3oe6"
+  },
+  music: {
+    path: "assets/music/wedding-music.wav"
+  },
   images: {
-    hero: "assets/images/hero.svg",
-    groom: "assets/images/groom.svg",
+    hero: "assets/images/wedding-illustration.webp",
     bride: "assets/images/bride.svg",
-    gallery: [
-      "assets/images/gallery/gallery-1.svg",
-      "assets/images/gallery/gallery-2.svg",
-      "assets/images/gallery/gallery-3.svg",
-      "assets/images/gallery/gallery-4.svg",
-      "assets/images/gallery/gallery-5.svg",
-      "assets/images/gallery/gallery-6.svg"
-    ]
+    groom: "assets/images/groom.svg"
+  },
+  timeline: [
+    { time: "12:00 PM", title: "Guest Arrival" },
+    { time: "12:30 PM", title: "Bride & Groom Arrival" },
+    { time: "Lunch Reception", title: "Jamuan Makan" },
+    { time: "End", title: "Thank You" }
+  ],
+  firebase: {
+    apiKey: "YOUR_FIREBASE_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_FIREBASE_APP_ID",
+    collectionName: "wedding_rsvps"
   }
 };
+
+window.WEDDING_CONFIG = WEDDING_CONFIG;
+
