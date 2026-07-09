@@ -213,11 +213,7 @@ h3 {
   inset: 0;
   background:
     linear-gradient(rgba(231, 244, 252, 0.18), rgba(255, 253, 248, 0.9)),
-    image-set(
-      url("assets/images/wedding-illustration.webp") type("image/webp"),
-      url("assets/images/wedding-illustration.png") type("image/png")
-    )
-    center / cover;
+    url("assets/images/wedding-illustration.webp") center / cover;
   filter: saturate(0.94) brightness(1.04);
   transform: scale(1.04);
 }
@@ -609,11 +605,7 @@ h3 {
   padding: 88px 20px 116px;
   background:
     linear-gradient(rgba(231, 244, 252, 0.82), rgba(255, 253, 248, 0.96)),
-    image-set(
-      url("assets/images/wedding-illustration.webp") type("image/webp"),
-      url("assets/images/wedding-illustration.png") type("image/png")
-    )
-    center / cover;
+    url("assets/images/wedding-illustration.webp") center / cover;
   text-align: center;
 }
 

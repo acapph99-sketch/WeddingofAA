@@ -15,7 +15,6 @@ AA_Wedding_Website/
   README.md
   assets/
     images/
-      wedding-illustration.png
       wedding-illustration.webp
       bride.svg
       groom.svg
@@ -45,7 +44,7 @@ Open `config.js`. Editable content lives there:
 Replace these files with your final assets:
 
 ```text
-assets/images/wedding-illustration.png
+assets/images/wedding-illustration.webp
 assets/images/bride.svg
 assets/images/groom.svg
 ```
