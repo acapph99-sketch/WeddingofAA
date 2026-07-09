@@ -25,7 +25,7 @@
     connector: "dan",
     mother: "Ramlah binti Bakar (Kak Shah)",
     invitation:
-      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik ke Majlis Walimatulurus puteri mereka."
+      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik ke Majlis Walimatulurus puteri kami."
   },
   invitation: {
     guestLabel: "Jemputan Khas Buat",
@@ -35,14 +35,14 @@
   },
   contacts: [
     {
-      name: "Rosli (Bang Lin)",
+      name: "En Rosli (Bang Lin)",
       relationship: "Family Representative",
       phone: "60142402822"
     },
     {
-      name: "Anis",
-      relationship: "Bride",
-      phone: "60142402822"
+      name: "En Musher",
+      relationship: "Family Representative",
+      phone: "60125221040"
     }
   ],
   maps: {
@@ -54,24 +54,15 @@
     path: "assets/music/wedding-music.wav"
   },
   images: {
-    hero: "assets/images/wedding-illustration.webp",
     bride: "assets/images/bride.svg",
     groom: "assets/images/groom.svg"
   },
   timeline: [
     { time: "12:00 PM", title: "Guest Arrival" },
     { time: "12:30 PM", title: "Bride & Groom Arrival" },
-    { time: "Lunch Reception", title: "Jamuan Makan" },
+    { time: "12.00 - 5.00 PM", title: "Jamuan Makan" },
     { time: "End", title: "Thank You" }
   ],
-  firebase: {
-    apiKey: "YOUR_FIREBASE_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_FIREBASE_APP_ID",
-    collectionName: "wedding_rsvps"
   }
 };
 
