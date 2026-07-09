@@ -54,7 +54,7 @@
     path: "assets/music/wedding-music.wav"
   },
   images: {
-    hero: "assets/images/wedding-illustration.png",
+    hero: "assets/images/wedding-illustration.webp",
     bride: "assets/images/bride.svg",
     groom: "assets/images/groom.svg"
   },
