@@ -25,7 +25,7 @@
     connector: "dan",
     mother: "Ramlah binti Bakar (Kak Shah)",
     invitation:
-      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik ke Majlis Walimatulurus puteri kami."
+      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik ke Majlis Walimatulurus puteri mereka."
   },
   invitation: {
     guestLabel: "Jemputan Khas Buat",
@@ -42,7 +42,7 @@
     {
       name: "En. Musher",
       relationship: "Family Representative",
-      phone: "60125221040"
+      phone: "+060125221040"
     }
   ],
   maps: {
@@ -55,8 +55,8 @@
   },
   images: {
     hero: "assets/images/wedding-illustration.webp",
-    bride: "assets/images/bride.svg",
-    groom: "assets/images/groom.svg"
+    bride: "assets/images/bride-photo.webp",
+    groom: "assets/images/groom-photo.webp"
   },
   timeline: [
     { time: "12:00 PM", title: "Guest Arrival" },
