@@ -51,7 +51,7 @@
     openUrl: "https://maps.app.goo.gl/btB6J5w7BqSCi3oe6"
   },
   music: {
-    path: "assets/music/wedding-music.wav"
+    path: "assets/music/wedding-music.mp3"
   },
   images: {
     hero: "assets/images/wedding-illustration.webp",

@@ -20,7 +20,7 @@ AA_Wedding_Website/
       bride.svg
       groom.svg
     music/
-      wedding-music.wav
+      wedding-music.mp3
     icons/
       favicon.svg
 ```
@@ -59,10 +59,10 @@ Recommended sizes:
 
 ## Replace Music
 
-The included music file is a generated placeholder:
+The included music file is:
 
 ```text
-assets/music/wedding-music.wav
+assets/music/wedding-music.mp3
 ```
 
 To replace it:
