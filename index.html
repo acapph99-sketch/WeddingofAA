@@ -127,36 +127,6 @@
           <div class="contact-grid" id="contactGrid"></div>
         </div>
       </section>
-
-      <section class="rsvp section ivory-band" id="rsvp" aria-labelledby="rsvpTitle">
-        <div class="section-inner reveal">
-          <p class="eyebrow">RSVP</p>
-          <h2 id="rsvpTitle">Confirm Attendance</h2>
-          <div class="rsvp-layout">
-            <form class="rsvp-form" id="rsvpForm">
-              <label>Name<input id="guestInput" name="name" autocomplete="name" required /></label>
-              <fieldset><legend>Attendance</legend><label class="choice"><input type="radio" name="attendance" value="attending" required /> Attending</label><label class="choice"><input type="radio" name="attendance" value="not_attending" /> Not Attending</label></fieldset>
-              <label>Number of Guests<input id="guestCount" name="guestCount" type="number" min="0" max="10" value="1" required /></label>
-              <label>Message / Wishes<textarea id="messageInput" name="message" rows="4" maxlength="280"></textarea></label>
-              <button class="btn btn-primary" id="submitRsvp" type="submit"><span class="btn-text">Submit</span><span class="loader" aria-hidden="true"></span></button>
-              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            </form>
-            <aside class="stats-card" aria-label="RSVP dashboard">
-              <h3>Live RSVP</h3>
-              <div class="stats-grid"><div><strong id="totalResponses">0</strong><span>Responses</span></div><div><strong id="guestsAttending">0</strong><span>Guests Attending</span></div><div><strong id="guestsNotAttending">0</strong><span>Guests Not Attending</span></div></div>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section class="wishes section" id="wishes" aria-labelledby="wishesTitle">
-        <div class="section-inner reveal">
-          <p class="eyebrow">Guest Wishes</p>
-          <h2 id="wishesTitle">Doa &amp; Ucapan</h2>
-          <div class="wishes-grid" id="wishesGrid"></div>
-          <button class="btn btn-secondary" id="loadMoreWishes" type="button" hidden>Load More</button>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
