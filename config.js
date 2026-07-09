@@ -25,24 +25,24 @@
     connector: "dan",
     mother: "Ramlah binti Bakar (Kak Shah)",
     invitation:
-      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik ke Majlis Walimatulurus puteri kami."
+      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik ke Majlis Walimatulurus puteri mereka."
   },
   invitation: {
     guestLabel: "Jemputan Khas Buat",
-    bismillah: "Bismillahirrahmanirrahim",
+    bismillah: "بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
     note:
       "Semoga dengan kehadiran dan doa restu para tetamu, majlis ini diberkati Allah SWT dan menjadi kenangan indah buat keluarga kami."
   },
   contacts: [
     {
-      name: "En Rosli (Bang Lin)",
+      name: "Rosli (Bang Lin)",
       relationship: "Family Representative",
       phone: "60142402822"
     },
     {
-      name: "En Musher",
+      name: "En. Musher",
       relationship: "Family Representative",
-      phone: "60125221040"
+      phone: "+060125221040"
     }
   ],
   maps: {
@@ -54,16 +54,16 @@
     path: "assets/music/wedding-music.wav"
   },
   images: {
+    hero: "assets/images/wedding-illustration.png",
     bride: "assets/images/bride.svg",
     groom: "assets/images/groom.svg"
   },
   timeline: [
     { time: "12:00 PM", title: "Guest Arrival" },
     { time: "12:30 PM", title: "Bride & Groom Arrival" },
-    { time: "12.00 - 5.00 PM", title: "Jamuan Makan" },
+    { time: "Lunch Reception", title: "Jamuan Makan" },
     { time: "End", title: "Thank You" }
   ],
-  }
 };
 
 window.WEDDING_CONFIG = WEDDING_CONFIG;

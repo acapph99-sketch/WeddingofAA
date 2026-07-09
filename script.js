@@ -1,17 +1,6 @@
-﻿const config = window.WEDDING_CONFIG;
+const config = window.WEDDING_CONFIG;
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
-
-let firebaseApi = null;
-
-const state = {
-  db: null,
-  rsvpCollection: null,
-  statsRef: null,
-  lastWishDoc: null,
-  isSubmitting: false,
-  lastSubmitAt: 0
-};
 
 function setText(key, value) {
   $$(`[data-text="${key}"]`).forEach((element) => {
@@ -72,12 +61,13 @@ function renderContacts() {
   grid.innerHTML = "";
 
   config.contacts.forEach((contact) => {
-    const phone = contact.phone.replace(/[^0-9]/g, "");
+    const phone = normalizePhone(contact.phone);
     const card = document.createElement("article");
     card.className = "contact-card";
     card.innerHTML = `
       <h3>${escapeHtml(contact.name)}</h3>
       <p>${escapeHtml(contact.relationship)}</p>
+      <a class="contact-phone" href="tel:+${phone}">+${phone}</a>
       <div class="contact-actions">
         <a class="btn btn-secondary" href="https://wa.me/${phone}" target="_blank" rel="noreferrer">WhatsApp</a>
         <a class="btn btn-secondary" href="tel:+${phone}">Call</a>
@@ -208,180 +198,12 @@ function setupPetals() {
   }, 1300);
 }
 
-async function setupFirebase() {
-  if (!isFirebaseConfigured()) {
-    setFormStatus("Firebase is not configured yet. Add your Firebase keys in config.js.", "error");
-    $("#submitRsvp").disabled = true;
-    return;
-  }
+function normalizePhone(value) {
+  const digits = String(value).replace(/[^0-9]/g, "");
 
-  const [{ initializeApp }, firestore] = await Promise.all([
-    import("https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"),
-    import("https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js")
-  ]);
-
-  firebaseApi = firestore;
-  const app = initializeApp(config.firebase);
-  state.db = firebaseApi.getFirestore(app);
-  state.rsvpCollection = firebaseApi.collection(state.db, config.firebase.collectionName);
-  state.statsRef = firebaseApi.doc(state.db, `${config.firebase.collectionName}_stats`, "summary");
-
-  subscribeStats();
-  loadWishes();
-}
-
-function isFirebaseConfigured() {
-  return ["apiKey", "authDomain", "projectId", "appId"].every((key) => {
-    const value = config.firebase[key];
-    return value && !String(value).startsWith("YOUR_");
-  });
-}
-
-function subscribeStats() {
-  firebaseApi.onSnapshot(state.statsRef, (snapshot) => {
-    const data = snapshot.exists() ? snapshot.data() : {};
-    $("#totalResponses").textContent = data.responses || 0;
-    $("#guestsAttending").textContent = data.guestsAttending || 0;
-    $("#guestsNotAttending").textContent = data.guestsNotAttending || 0;
-  });
-}
-
-function setupRsvpForm() {
-  $("#rsvpForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    if (!state.db || state.isSubmitting) return;
-    if (Date.now() - state.lastSubmitAt < 8000) {
-      setFormStatus("Please wait a moment before submitting again.", "error");
-      return;
-    }
-
-    const payload = readFormPayload(event.currentTarget);
-    if (!payload) return;
-
-    await submitRsvp(payload, event.currentTarget);
-  });
-}
-
-function readFormPayload(form) {
-  const formData = new FormData(form);
-  const name = String(formData.get("name") || "").trim();
-  const attendance = String(formData.get("attendance") || "");
-  const guestCount = Number(formData.get("guestCount") || 0);
-  const message = String(formData.get("message") || "").trim();
-
-  if (!name || !attendance) {
-    setFormStatus("Please fill in your name and attendance.", "error");
-    return null;
-  }
-
-  if (attendance === "attending" && guestCount < 1) {
-    setFormStatus("Please enter at least 1 guest for attending RSVP.", "error");
-    return null;
-  }
-
-  return {
-    name,
-    attendance,
-    guestCount: attendance === "attending" ? Math.min(guestCount, 10) : 0,
-    message,
-    createdAt: firebaseApi.serverTimestamp()
-  };
-}
-
-async function submitRsvp(payload, form) {
-  const button = $("#submitRsvp");
-  state.isSubmitting = true;
-  button.disabled = true;
-  button.classList.add("is-loading");
-  setFormStatus("Submitting your RSVP...", "");
-
-  try {
-    await firebaseApi.addDoc(state.rsvpCollection, payload);
-    await updateStats(payload);
-    state.lastSubmitAt = Date.now();
-    form.reset();
-    $("#guestCount").value = "1";
-    setFormStatus("Thank you. Your RSVP has been received.", "success");
-    await refreshWishes();
-  } catch (error) {
-    setFormStatus("Unable to submit right now. Please try again shortly.", "error");
-  } finally {
-    state.isSubmitting = false;
-    button.disabled = false;
-    button.classList.remove("is-loading");
-  }
-}
-
-async function updateStats(payload) {
-  await firebaseApi.runTransaction(state.db, async (transaction) => {
-    const snapshot = await transaction.get(state.statsRef);
-    const current = snapshot.exists()
-      ? snapshot.data()
-      : { responses: 0, guestsAttending: 0, guestsNotAttending: 0 };
-
-    const next = {
-      responses: Number(current.responses || 0) + 1,
-      guestsAttending:
-        Number(current.guestsAttending || 0) + (payload.attendance === "attending" ? payload.guestCount : 0),
-      guestsNotAttending:
-        Number(current.guestsNotAttending || 0) + (payload.attendance === "not_attending" ? 1 : 0),
-      updatedAt: firebaseApi.serverTimestamp()
-    };
-
-    transaction.set(state.statsRef, next);
-  });
-}
-
-async function loadWishes(afterDoc = null) {
-  if (!state.db) return;
-
-  const pieces = [state.rsvpCollection, firebaseApi.orderBy("createdAt", "desc"), firebaseApi.limit(20)];
-  if (afterDoc) pieces.push(firebaseApi.startAfter(afterDoc));
-
-  const snapshot = await firebaseApi.getDocs(firebaseApi.query(...pieces));
-  state.lastWishDoc = snapshot.docs[snapshot.docs.length - 1] || state.lastWishDoc;
-  renderWishes(snapshot.docs, Boolean(afterDoc));
-  $("#loadMoreWishes").hidden = snapshot.docs.length < 20;
-}
-
-async function refreshWishes() {
-  state.lastWishDoc = null;
-  $("#wishesGrid").innerHTML = "";
-  await loadWishes();
-}
-
-function renderWishes(docs, append) {
-  const grid = $("#wishesGrid");
-  if (!append) grid.innerHTML = "";
-
-  docs
-    .map((item) => item.data())
-    .filter((item) => item.message)
-    .forEach((item) => {
-      const card = document.createElement("article");
-      card.className = "wish-card";
-      card.innerHTML = `
-        <h3>${escapeHtml(item.name)}</h3>
-        <p>${escapeHtml(item.message)}</p>
-        <small>${item.attendance === "attending" ? "Attending" : "Not Attending"}</small>
-      `;
-      grid.appendChild(card);
-    });
-
-  if (!grid.children.length) {
-    grid.innerHTML = '<article class="wish-card"><h3>No wishes yet</h3><p>Be the first to leave a message for the couple.</p></article>';
-  }
-}
-
-function setFormStatus(message, type) {
-  const status = $("#formStatus");
-  status.textContent = message;
-  status.className = `form-status ${type || ""}`.trim();
-}
-
-function setupLoadMore() {
-  $("#loadMoreWishes").addEventListener("click", () => loadWishes(state.lastWishDoc));
+  if (digits.startsWith("060")) return `60${digits.slice(3)}`;
+  if (digits.startsWith("0")) return `60${digits.slice(1)}`;
+  return digits;
 }
 
 function escapeHtml(value) {
@@ -399,8 +221,3 @@ revealOnScroll();
 setupMusic();
 setupScrollUi();
 setupPetals();
-setupRsvpForm();
-setupLoadMore();
-setupFirebase();
-
-
