@@ -229,10 +229,10 @@ h3 {
   padding: 38px 24px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 28px;
-  background: rgba(245, 251, 255, 0.78);
+  background: rgba(245, 251, 255, 0.58);
   text-align: center;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(10px);
 }
 
 .envelope-wrap {
@@ -331,21 +331,22 @@ h3 {
 }
 
 .monogram {
-  width: clamp(124px, 34vw, 218px);
-  height: clamp(124px, 34vw, 218px);
-  display: grid;
-  place-items: center;
-  margin: 18px auto 28px;
-  border: 1px solid rgba(127, 176, 207, 0.48);
-  border-radius: 50%;
-  background: rgba(245, 251, 255, 0.48);
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 14px auto 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--blue-deep);
   font-family: var(--serif);
-  font-size: clamp(3.4rem, 14vw, 7.4rem);
-  box-shadow:
-    inset 0 0 0 10px rgba(255, 255, 255, 0.22),
-    var(--soft-shadow);
-  backdrop-filter: blur(8px);
+  font-size: clamp(3.6rem, 16vw, 8rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 18px rgba(245, 251, 255, 0.88),
+    0 8px 30px rgba(79, 127, 159, 0.18);
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .hero h2 {
