@@ -35,13 +35,13 @@
   },
   contacts: [
     {
-      name: "Rosli (Bang Lin)",
-      relationship: "Family Representative",
+      name: "En. Rosli (Bang Lin)",
+      relationship: "Bapa Pengantin Perempuan",
       phone: "60142402822"
     },
     {
       name: "En. Musher",
-      relationship: "Family Representative",
+      relationship: "Bapa Saudara Perempuan",
       phone: "+060125221040"
     }
   ],
