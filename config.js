@@ -55,8 +55,8 @@
   },
   images: {
     hero: "assets/images/wedding-illustration.webp",
-    bride: "assets/images/bride.svg",
-    groom: "assets/images/groom.svg"
+    bride: "assets/images/bride-photo.webp",
+    groom: "assets/images/groom-photo.webp"
   },
   timeline: [
     { time: "12:00 PM", title: "Guest Arrival" },

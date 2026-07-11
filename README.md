@@ -16,8 +16,8 @@ AA_Wedding_Website/
   assets/
     images/
       wedding-illustration.webp
-      bride.svg
-      groom.svg
+      bride-photo.webp
+      groom-photo.webp
     music/
       wedding-music.mp3
     icons/
@@ -45,8 +45,8 @@ Replace these files with your final assets:
 
 ```text
 assets/images/wedding-illustration.webp
-assets/images/bride.svg
-assets/images/groom.svg
+assets/images/bride-photo.webp
+assets/images/groom-photo.webp
 ```
 
 If you change filenames, update the paths inside `config.js` and `style.css`.
