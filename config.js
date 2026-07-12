@@ -25,7 +25,7 @@
     connector: "dan",
     mother: "Ramlah binti Bakar (Kak Shah)",
     invitation:
-      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik ke Majlis Walimatulurus puteri kami."
+      "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik serta keluarga ke Majlis Walimatulurus puteri kami."
   },
   invitation: {
     guestLabel: "Jemputan Khas Buat",
