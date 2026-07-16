@@ -59,10 +59,10 @@
     groom: "assets/images/groom-photo.webp"
   },
   timeline: [
-    { time: "12:00 PM", title: "Ketibaan Tetamu" },
-    { time: "12:30 PM", title: "Ketibaan Pengantin" },
-    { time: "12:00 PM", title: "Jamuan Makan" },
-    { time: "5:30 PM", title: "Majlis Tamat" }
+    { time: "12:00 Tengah Hari", title: "Ketibaan Tetamu" },
+    { time: "12:30 Tengah Hari", title: "Ketibaan Pengantin" },
+    { time: "12:00 Tengah Hari", title: "Jamuan Makan" },
+    { time: "5:00 Petang", title: "Majlis Tamat" }
   ],
 };
 
