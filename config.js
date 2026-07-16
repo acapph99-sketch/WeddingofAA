@@ -13,7 +13,7 @@
     day: "Rabu",
     dateDisplay: "2 September 2026",
     dateTime: "2026-09-02T12:00:00+08:00",
-    invitationTime: "12:00 Tengah Hari",
+    invitationTime: "12:00-5:00 Ptg",
     arrivalLabel: "Ketibaan Pengantin",
     arrivalTime: "12:30 Tengah Hari",
     venueName: "Dewan Walan (MyHomeVillage)",
