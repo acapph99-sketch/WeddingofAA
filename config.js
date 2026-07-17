@@ -1,8 +1,9 @@
 ﻿const WEDDING_CONFIG = {
   meta: {
-    siteTitle: "Asyraf & Anis Wedding Invitation",
+    siteTitle: "Anis & Asyraf Wedding Invitation",
     description: "Majlis Walimatulurus Anis Zulaikha dan Mohamad Asyraf.",
-    previewImage: "assets/images/og-preview.jpg"
+    siteUrl: "https://acapph99-sketch.github.io/WeddingofAA/",
+    previewImage: "https://acapph99-sketch.github.io/WeddingofAA/assets/images/og-preview.jpg"
   },
   couple: {
     bride: "Anis Zulaikha",
@@ -23,7 +24,7 @@
   parents: {
     intro: "Dengan penuh kesyukuran,",
     father: "Rosli bin Ibrahim (Bang Lin)",
-    connector: "&amp;",
+    connector: "&",
     mother: "Ramlah binti Bakar (Kak Shah)",
     invitation:
       "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik serta keluarga ke Majlis Walimatulurus puteri kami."
@@ -60,10 +61,10 @@
     groom: "assets/images/groom-photo.webp"
   },
   timeline: [
-  { time: "12:00 Tengah Hari", title: "Ketibaan Tetamu" },
-  { time: "12:00 Tengah Hari", title: "Jamuan Makan" },
-  { time: "12:30 Tengah Hari", title: "Ketibaan Pengantin" },
-  { time: "5:00 Petang", title: "Majlis Tamat" }
+    { time: "12:00 Tengah Hari", title: "Ketibaan Tetamu" },
+    { time: "12:00 Tengah Hari", title: "Jamuan Makan" },
+    { time: "12:30 Tengah Hari", title: "Ketibaan Pengantin" },
+    { time: "5:00 Petang", title: "Majlis Tamat" }
   ],
 };
 

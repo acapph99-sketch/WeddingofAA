@@ -18,6 +18,7 @@ function setMeta(selector, value) {
 function hydrateStaticContent() {
   document.title = config.meta.siteTitle;
   setMeta('meta[name="description"]', config.meta.description);
+  setMeta('meta[property="og:url"]', config.meta.siteUrl);
   setMeta('meta[property="og:title"]', config.meta.siteTitle);
   setMeta('meta[property="og:description"]', config.meta.description);
   setMeta('meta[property="og:image"]', config.meta.previewImage);
