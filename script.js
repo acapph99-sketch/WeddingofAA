@@ -8,9 +8,23 @@ function setText(key, value) {
   });
 }
 
+function setMeta(selector, value) {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.setAttribute("content", value);
+  }
+}
+
 function hydrateStaticContent() {
   document.title = config.meta.siteTitle;
-  document.querySelector('meta[name="description"]').content = config.meta.description;
+  setMeta('meta[name="description"]', config.meta.description);
+  setMeta('meta[property="og:title"]', config.meta.siteTitle);
+  setMeta('meta[property="og:description"]', config.meta.description);
+  setMeta('meta[property="og:image"]', config.meta.previewImage);
+  setMeta('meta[property="og:image:secure_url"]', config.meta.previewImage);
+  setMeta('meta[name="twitter:title"]', config.meta.siteTitle);
+  setMeta('meta[name="twitter:description"]', config.meta.description);
+  setMeta('meta[name="twitter:image"]', config.meta.previewImage);
 
   setText("monogram", config.couple.monogram);
   setText("coupleName", config.couple.displayName);

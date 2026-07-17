@@ -18,6 +18,7 @@ AA_Wedding_Website/
       wedding-illustration.webp
       bride-photo.webp
       groom-photo.webp
+      og-preview.jpg
     music/
       wedding-music.mp3
     icons/
@@ -37,6 +38,7 @@ Open `config.js`. Editable content lives there:
 - Google Maps links
 - Music path
 - Image paths
+- WhatsApp/social preview image
 - Timeline items
 
 ## Replace Images
@@ -47,6 +49,7 @@ Replace these files with your final assets:
 assets/images/wedding-illustration.webp
 assets/images/bride-photo.webp
 assets/images/groom-photo.webp
+assets/images/og-preview.jpg
 ```
 
 If you change filenames, update the paths inside `config.js` and `style.css`.
@@ -55,6 +58,23 @@ Recommended sizes:
 
 - Hero/background image: 1600px wide or larger, compressed
 - Couple photos: 800px by 800px, square crop
+- WhatsApp preview image: 1200px by 630px, JPG or PNG
+
+## WhatsApp Preview Image
+
+The website includes a ready-made preview image:
+
+```text
+assets/images/og-preview.jpg
+```
+
+The preview is connected in `index.html` using Open Graph meta tags. WhatsApp can cache old previews, so if you change the image later, send the link through the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) or wait for WhatsApp's cache to refresh.
+
+For the most reliable preview after deploying to GitHub Pages, replace the `og:image`, `og:image:secure_url`, and `twitter:image` values in `index.html` with your full live image URL, for example:
+
+```text
+https://yourusername.github.io/AA_Wedding_Website/assets/images/og-preview.jpg
+```
 
 ## Replace Music
 
@@ -97,8 +117,8 @@ Contacts are configured in `config.js`:
 contacts: [
   {
     name: "En. Musher",
-    relationship: "Family Representative",
-    phone: "+060125221040"
+    relationship: "Bapa Saudara Perempuan",
+    phone: "60125221040"
   }
 ]
 ```
