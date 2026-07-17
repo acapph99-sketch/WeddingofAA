@@ -7,7 +7,7 @@
   couple: {
     bride: "Anis Zulaikha",
     groom: "Mohamad Asyraf",
-    displayName: "Asyraf & Anis",
+    displayName: "Anis & Asyraf",
     monogram: "A&A"
   },
   event: {
@@ -23,7 +23,7 @@
   parents: {
     intro: "Dengan penuh kesyukuran,",
     father: "Rosli bin Ibrahim (Bang Lin)",
-    connector: "dan",
+    connector: "&amp;",
     mother: "Ramlah binti Bakar (Kak Shah)",
     invitation:
       "menjemput Dato', Datin, Tuan, Puan, Encik dan Cik serta keluarga ke Majlis Walimatulurus puteri kami."
@@ -61,8 +61,8 @@
   },
   timeline: [
     { time: "12:00 Tengah Hari", title: "Ketibaan Tetamu" },
-    { time: "12:30 Tengah Hari", title: "Ketibaan Pengantin" },
     { time: "12:00 Tengah Hari", title: "Jamuan Makan" },
+    { time: "12:30 Tengah Hari", title: "Ketibaan Pengantin" },
     { time: "5:00 Petang", title: "Majlis Tamat" }
   ],
 };
